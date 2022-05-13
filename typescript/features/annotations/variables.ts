@@ -1,48 +1,48 @@
 let apples: number = 5
 let speed: string = 'fast'
 let hasName: boolean = true
-let notMuch: null = null
+let nothingMuch: null = null
 let nothing: undefined = undefined
 
-// built-in objects
-let now : Date = new Date();
+// builtin objects
+let now: Date = new Date 
 
 // Array
-let colores: string[] = ['red','green','yellow']
-let luckyNumbers: number[] = [8,12,18,7,21]
-let truthTable: boolean[] = [true,false,false,true]
+let colors: string[] = ['red','green','blue']
+let myNumbers: number[] = [1,2,3,4]
+let truthTable: boolean[] = [true, true, false, false]
 
 // Classes
-class Car {}
 
+class Car {}
 let car: Car = new Car()
 
-// Object Literal
-
-let point: { x: number; y: number } = {
-  x: 10,
+// Object literal
+let point: {x: number; y: number} = { 
+  x: 10, 
   y: 20
 }
 
 // Function
-const logNumber: (i: number) => void = (i: number) => {
+const logNumber: (i: number)=> void = (i: number) => {
   console.log(i)
 }
 
 // When to use annotations
-// 1) When a function returns the any type
 
-  const json = '{"x": 10, "y": 20}'
-  const coordinates: { x: number; y: number} = JSON.parse(json)
-  console.log(coordinates.x,coordinates.y)
+// 1) When a function returns the 'any' type
+const json = '{"x": 10, "y": 20}'
+const coordinates = JSON.parse(json)
+console.log(coordinates)
 
-// 2) When we declare a variable on one line and initialize it on another line
+// 2) When we declare a variable on one line and initialize it later
+let words: string[]
+words   = ['red','green','blue']
 
-    let isCustomer : boolean
+// 3) When we have a variable that cant be inferred
+let numbers: Array<number | boolean> = [-10, -1, 12]
 
-    isCustomer = false
-
-// 3) Variables whose type cannot be infered
-    let myvar: boolean| undefined = undefined
-
-    myvar = true
+// 4) When defining functions (annotate parameters and return type)
+let  sum = (a: number, b: number): number => {
+  return a + b
+}

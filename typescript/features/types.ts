@@ -9,4 +9,3 @@ class Color {
 
 }
 
-const red = Color()
