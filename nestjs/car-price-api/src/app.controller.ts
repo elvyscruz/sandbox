@@ -1,6 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { SerializeInterceptor } from './interceptors/serialize.interceptor';
 
 @Controller()
 export class AppController {

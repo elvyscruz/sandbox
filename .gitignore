@@ -3,3 +3,4 @@ node_modules/
 *.swp
 typescript/gmap/.cache/
 .DS_Store
+*.sqlite
