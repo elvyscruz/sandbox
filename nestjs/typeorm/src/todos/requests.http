@@ -1,0 +1,15 @@
+### Create a new Todo
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+  "todo": "Buy Picapollo",
+  "done": false
+}
+
+### Find a particular todo with a given ID
+GET http://localhost:3000/todos/3
+
+
+### Find all todos
+GET http://localhost:3000/todos
