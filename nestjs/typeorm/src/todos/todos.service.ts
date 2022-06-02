@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Todo } from './todo.entity';
@@ -17,14 +17,14 @@ export class TodosService {
     return this.repo.findOne(id);
   }
 
-  find() {
-    return this.repo.find();
+  find(isDone: boolean) {
+    return this.repo.find({ done: isDone });
   }
 
   async update(id: number, attrs: Partial<Todo>) {
     const user = await this.findOne(id);
     if (!user) {
-      throw new Error('user not found!');
+      throw new NotFoundException('user not found!');
     }
     // Take all the properties of attrs and assign the to user (overriding existing ones)
     Object.assign(user, attrs);
@@ -34,7 +34,7 @@ export class TodosService {
   async remove(id: number) {
     const user = await this.findOne(id);
     if (!user) {
-      throw new Error('user not found!');
+      throw new NotFoundException('user not found!');
     }
     return this.repo.remove(user);
   }

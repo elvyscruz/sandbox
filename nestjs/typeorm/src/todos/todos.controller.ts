@@ -6,8 +6,10 @@ import {
   Patch,
   Param,
   Query,
+  Delete,
 } from '@nestjs/common';
 import { CreateTodoDto } from './dtos/create-todo.dto';
+import { UpdateTodoDto } from './dtos/update-todo.dto';
 import { TodosService } from './todos.service';
 
 @Controller('todos')
@@ -25,7 +27,17 @@ export class TodosController {
   }
 
   @Get()
-  findAllTodos() {
-    return this.todosService.find();
+  findAllTodos(@Query('isDone') isDone: string) {
+    return this.todosService.find(isDone.toLowerCase() === 'true');
+  }
+
+  @Delete('/:id')
+  removeTodo(@Param('id') id: string) {
+    return this.todosService.remove(parseInt(id));
+  }
+
+  @Patch('/:id')
+  updateTodo(@Param('id') id: string, @Body() body: UpdateTodoDto) {
+    return this.todosService.update(parseInt(id), body);
   }
 }
