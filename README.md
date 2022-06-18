@@ -1,2 +1,3 @@
 # sandbox
-Code snippets for various programmin languages
+
+Code snippets for various programming languages and frameworks
