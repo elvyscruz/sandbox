@@ -4,3 +4,4 @@ node_modules/
 typescript/gmap/.cache/
 .DS_Store
 *.sqlite
+.terraform/
