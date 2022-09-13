@@ -1,0 +1,27 @@
+### Create a new Todo
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+  "todo": "Buy Picapollo",
+  "done": false
+}
+
+### Find a particular todo with a given ID
+GET http://localhost:3000/todos/3
+
+
+### Find all todos
+GET http://localhost:3000/todos?isDone=true
+
+
+### Delete a Todo
+DELETE http://localhost:3000/todos/3
+
+### Update todo
+PATCH http://localhost:3000/todos/2
+content-type: application/json
+
+{
+  "todo": "Watch celtics game"
+}

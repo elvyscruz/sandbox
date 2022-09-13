@@ -1,0 +1,11 @@
+.env
+node_modules/
+*.swp
+typescript/gmap/.cache/
+.DS_Store
+*.sqlite
+# .tfstate files
+*.tfstate
+*.tfstate.*
+**/.terraform/*
+
