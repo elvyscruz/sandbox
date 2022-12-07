@@ -1,0 +1,27 @@
+version: '3.9'
+
+services:
+  mariadb:
+    image: mariadb:10.5
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+    volumes:
+      - $PWD/mariadb/var/lib/mysql:/var/lib/mysql
+      - $PWD/mariadb/conf.d:/etc/mysql/conf.d
+  moodle:
+    image: moodlehq/moodle-php-apache:7.4
+    restart: always
+    volumes:
+      - $PWD/moodle/html:/var/www/html
+      - $PWD/moodle/moodledata:/var/www/moodledata
+  caddy:
+    image: caddy:2.6
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - $PWD/caddy/Caddyfile:/etc/caddy/Caddyfile
+      - $PWD/caddy/data:/data
+      - $PWD/caddy/config:/config

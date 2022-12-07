@@ -1,0 +1,16 @@
+{
+  "name": "php",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index,php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@prettier/plugin-php": "0.14.3",
+    "prettier": "2.0.5"
+  }
+}
