@@ -1,0 +1,8 @@
+### post to lambda function url
+POST https://bcddpe4toprxwxl3r33rjihc5y0vmsfo.lambda-url.us-east-1.on.aws/
+Content-Type: application/json
+
+{
+  "num1": 10,
+  "num2": 20
+}
