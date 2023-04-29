@@ -48,7 +48,6 @@ resource "aws_lambda_function" "test_lambda" {
       foo = "bar"
     }
   }
-<<<<<<< HEAD
 }
 
 resource "aws_lambda_layer_version" "uuid" {
@@ -57,6 +56,3 @@ resource "aws_lambda_layer_version" "uuid" {
 
   compatible_runtimes = ["nodejs16.x"]
 }
-=======
-}
->>>>>>> dae995b (terraform snippets)
