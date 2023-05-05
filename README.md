@@ -1,3 +1,3 @@
 # sandbox
 
-Code snippets and sample apps for various programming languages and frameworks
+Code snippets for various programming languages, frameworks and tools.
