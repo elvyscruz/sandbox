@@ -1,0 +1,7 @@
+### Make post request
+POST http://localhost:3000/sample
+Accept: application/json
+
+{
+  "foo": "bar"
+}
